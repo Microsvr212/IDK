@@ -222,10 +222,10 @@ class OptimizerApp(ctk.CTk):
         logo = ctk.CTkFrame(brand, width=44, height=44, corner_radius=14, fg_color=ACCENT)
         logo.pack(side="left")
         logo.pack_propagate(False)
-        ctk.CTkLabel(logo, text="N", font=ctk.CTkFont(size=26, weight="black"), text_color="white").place(relx=.5, rely=.48, anchor="center")
+        ctk.CTkLabel(logo, text="N", font=ctk.CTkFont(size=26, weight="bold"), text_color="white").place(relx=.5, rely=.48, anchor="center")
         brand_text = ctk.CTkFrame(brand, fg_color="transparent")
         brand_text.pack(side="left", padx=11)
-        ctk.CTkLabel(brand_text, text="NOVA", font=ctk.CTkFont(size=20, weight="black"), text_color=TEXT).pack(anchor="w")
+        ctk.CTkLabel(brand_text, text="NOVA", font=ctk.CTkFont(size=20, weight="bold""), text_color=TEXT).pack(anchor="w")
         ctk.CTkLabel(brand_text, text="FORTNITE OPTIMIZER", font=ctk.CTkFont(size=8, weight="bold"), text_color=MUTED).pack(anchor="w")
 
         ctk.CTkLabel(self.sidebar, text="WORKSPACE", font=ctk.CTkFont(size=10, weight="bold"), text_color="#66758F").pack(anchor="w", padx=23, pady=(0, 9))
