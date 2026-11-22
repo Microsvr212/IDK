@@ -225,7 +225,7 @@ class OptimizerApp(ctk.CTk):
         ctk.CTkLabel(logo, text="N", font=ctk.CTkFont(size=26, weight="bold"), text_color="white").place(relx=.5, rely=.48, anchor="center")
         brand_text = ctk.CTkFrame(brand, fg_color="transparent")
         brand_text.pack(side="left", padx=11)
-        ctk.CTkLabel(brand_text, text="NOVA", font=ctk.CTkFont(size=20, weight="bold""), text_color=TEXT).pack(anchor="w")
+        ctk.CTkLabel(brand_text, text="NOVA", font=ctk.CTkFont(size=20, weight="bold"), text_color=TEXT).pack(anchor="w")
         ctk.CTkLabel(brand_text, text="FORTNITE OPTIMIZER", font=ctk.CTkFont(size=8, weight="bold"), text_color=MUTED).pack(anchor="w")
 
         ctk.CTkLabel(self.sidebar, text="WORKSPACE", font=ctk.CTkFont(size=10, weight="bold"), text_color="#66758F").pack(anchor="w", padx=23, pady=(0, 9))
