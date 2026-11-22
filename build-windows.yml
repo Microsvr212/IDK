@@ -1,0 +1,47 @@
+name: Build NOVA for Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'NOVA_Fortnite_Optimizer/**'
+      - '.github/workflows/build-windows.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v4
+
+      - name: Set up Python (only on the build server)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        working-directory: NOVA_Fortnite_Optimizer
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+      - name: Build NOVA executable
+        working-directory: NOVA_Fortnite_Optimizer
+        run: >-
+          python -m PyInstaller --noconfirm --clean --onefile --windowed
+          --name NOVA_Fortnite_Optimizer
+          --icon assets/nova.ico
+          --collect-all customtkinter
+          fortnite_optimizer.py
+
+      - name: Upload NOVA.exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: NOVA-Windows-EXE
+          path: NOVA_Fortnite_Optimizer/dist/NOVA_Fortnite_Optimizer.exe
+          if-no-files-found: error
+          retention-days: 14

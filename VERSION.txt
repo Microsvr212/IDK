@@ -1,0 +1,3 @@
+NOVA Fortnite Optimizer
+Version 2.0.0
+Windows 10/11 x64 target
